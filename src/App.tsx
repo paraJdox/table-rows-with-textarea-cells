@@ -1,4 +1,4 @@
-import DynamicCellTextArea from "./DynamicCellTextArea";
+import TableRow from "./TableRow";
 
 const table = {
   id: 1,
@@ -10,18 +10,18 @@ const table = {
   rows: [
     {
       id: 1,
-      values: [
-        { id: 1, text: "row val 1", colId: 1 },
-        { id: 2, text: "row val 2", colId: 2 },
-        { id: 3, text: "row val 3", colId: 3 },
+      cells: [
+        { id: 1, colId: 1, text: "row val 1" },
+        { id: 2, colId: 2, text: "row val 2" },
+        { id: 3, colId: 3, text: "row val 3" },
       ],
     },
     {
       id: 2,
-      values: [
-        { id: 4, text: "row val 1", colId: 1 },
-        { id: 5, text: "row val 2", colId: 2 },
-        { id: 6, text: "row val 3", colId: 3 },
+      cells: [
+        { id: 4, colId: 1, text: "row val 1" },
+        { id: 5, colId: 2, text: "row val 2" },
+        { id: 6, colId: 3, text: "row val 3" },
       ],
     },
   ],
@@ -43,11 +43,7 @@ function App() {
 
         <tbody>
           {table.rows.map((row) => (
-            <tr key={row.id}>
-              {row.values.map((rowValue) => (
-                <DynamicCellTextArea key={rowValue.id} currentCell={rowValue} />
-              ))}
-            </tr>
+            <TableRow key={row.id} currentRow={row} />
           ))}
         </tbody>
       </table>

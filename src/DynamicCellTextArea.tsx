@@ -1,18 +1,12 @@
 import { useEffect, useRef } from "react";
 
-type TableRowCell = {
+export type TableRowCell = {
   id: number;
   colId: number; // the column which this cell belongs to
   text: string;
 };
 
-type DynamicCellTextAreaProps = {
-  currentCell: TableRowCell;
-};
-
-const DynamicCellTextArea = (props: DynamicCellTextAreaProps) => {
-  console.log(props.currentCell);
-
+const DynamicCellTextArea = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const textareaWrapperRef = useRef<HTMLDivElement>(null);
 
