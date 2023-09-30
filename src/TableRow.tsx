@@ -1,5 +1,8 @@
 import { useState } from "react";
-import DynamicCellTextArea, { TableRowCell } from "./DynamicCellTextArea";
+import DynamicCellTextArea, {
+  DEFAULT_TEXT_AREA_HEIGHT,
+  TableRowCell,
+} from "./DynamicCellTextArea";
 
 type TableRow = {
   id: number;
@@ -11,7 +14,9 @@ type TableRowProps = {
 };
 
 const TableRow = (props: TableRowProps) => {
-  const [textAreaHeight, setTextAreaHeight] = useState<string>("100%");
+  const [textAreaHeight, setTextAreaHeight] = useState<string>(
+    DEFAULT_TEXT_AREA_HEIGHT
+  );
 
   return (
     <tr>
