@@ -73,6 +73,7 @@ const DynamicCellTextArea = (props: DynamicCellTextAreaProps) => {
           ref={textareaRef}
           rows={1}
           className="w-full px-3 py-2 bg-red-500 resize min-w-full min-h-full"
+          placeholder="NULL"
           onMouseUp={initialTextAreaStateValue}
         />
       </div>
